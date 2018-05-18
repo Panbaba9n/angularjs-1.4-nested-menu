@@ -1,0 +1,38 @@
+.nav-wrap {
+  max-height: 100vh;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+  text-align: center;
+  background: @col-menu;
+  ul {
+    height: auto;
+    max-height: 500px;
+    transition: max-height ease-in-out 0.5s ;
+    box-shadow: 4px -3px 14px 1px rgba(0,0,0,0.75);
+    &.ng-hide {
+      max-height: 0;
+      transition: max-height ease-in-out 0.3s;
+    }
+  }
+  li {
+    a {
+      display: block;
+      padding: 10px 0;
+      border-bottom: 1px solid @col-menu-border;
+      transition: all ease-out .4s;
+      &:hover {
+        background: @col-text-main;
+        color: @col-active;
+        font-weight: bold;
+      }
+    }
+    &:last-of-type {
+      &>a {
+        border-bottom: none;
+      }
+    }
+  }
+}

@@ -95,20 +95,31 @@ module.exports = function makeWebpackConfig() {
       //
       // Reference: https://github.com/postcss/postcss-loader
       // Postprocess your css with PostCSS plugins
-      test: /\.css$/,
+
+      test: /\.less$/,
+
       // Reference: https://github.com/webpack/extract-text-webpack-plugin
       // Extract css files in production builds
       //
       // Reference: https://github.com/webpack/style-loader
       // Use style-loader in development.
 
-      loader: isTest ? 'null-loader' : ExtractTextPlugin.extract({
-        fallbackLoader: 'style-loader',
-        loader: [
+      // loader: isTest ? 'null-loader' : ExtractTextPlugin.extract({
+      //   fallbackLoader: 'style-loader',
+      //   loader: [
+      //     {loader: 'css-loader', query: {sourceMap: true}},
+      //     {loader: 'postcss-loader'}
+      //   ],
+      // })
+
+      use: isTest ? 'null-loader' :
+        [
+          {loader: 'style-loader' },
           {loader: 'css-loader', query: {sourceMap: true}},
+          {loader: 'less-loader'},
           {loader: 'postcss-loader'}
-        ],
-      })
+        ]
+
     }, {
       // ASSET LOADER
       // Reference: https://github.com/webpack/file-loader

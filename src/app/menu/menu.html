@@ -1,0 +1,14 @@
+<div class="nav-wrap">
+    <script type="text/ng-template" id="categoryTree">
+        <a href="" ng-click="menu.clicked(node)">
+            {{ node.title }}
+        </a>
+        <ul ng-show="node.nodes.length && node.open">
+            <li ng-repeat="node in node.nodes" ng-include="'categoryTree'"  ></li>
+        </ul>
+    </script>
+
+    <ul class="nav">
+        <li ng-repeat="node in menu.data" ng-include="'categoryTree'"></li>
+    </ul>
+</div>

@@ -1,11 +1,23 @@
-/* styles in src/style directory are applied to the whole page */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background: #0147A7;
-  color: #fff;
+  background: @col-main;
+  color: @col-text-main;
 }
 
 a {
-  color: #03A9F4;
+  color: @col-link;
+}
+
+img {
+  max-width: 100%;
+}
+app {
+  display: block;
 }
 
 main {

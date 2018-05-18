@@ -1,6 +1,9 @@
 import angular from 'angular';
+import ngAnimate from 'angular-animate';
 
-import '../style/app.css';
+import menu from './menu/menu'
+
+import '../style/app.less';
 
 let app = () => {
   return {
@@ -17,8 +20,12 @@ class AppCtrl {
 }
 
 const MODULE_NAME = 'app';
+let injected = [
+    ngAnimate,
+    menu
+];
 
-angular.module(MODULE_NAME, [])
+angular.module(MODULE_NAME, injected)
   .directive('app', app)
   .controller('AppCtrl', AppCtrl);
 
