@@ -5,13 +5,13 @@
 
 ul {
   list-style: none;
-  text-align: center;
   background: @col-menu;
   ul {
+    padding-left: 25px;
     height: auto;
-    max-height: 500px;
+    max-height: 100vh;
     transition: max-height ease-in-out 0.5s ;
-    box-shadow: 4px -3px 14px 1px rgba(0,0,0,0.75);
+    box-shadow: -3px -3px 14px 1px rgba(0,0,0,0.75);
     &.ng-hide {
       max-height: 0;
       transition: max-height ease-in-out 0.3s;
